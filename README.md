@@ -1,33 +1,31 @@
-# QuizSpringBootApplication
+# QuizSpringBootApplication Documentation
        
- <h3 align="center"> Quiz Application Documentation </h3>
-
 
 <h2> Introduction </h2>
 The Quiz application is a Spring Boot project that allows users to create quizzes, participate in quizzes, and retrieve quiz results. This documentation provides an overview of the project structure, key components, and functionality.
 <h1> Key Features: </h1>
-<h2>Quiz Creation</h2>: 
+<h3>Quiz Creation: </h3>
 The application allows users to create quizzes by providing a question, options, right answer, start date, and end date. The createQuiz method in the QuizController handles the creation of quizzes and saves them in the database.
-<h2>Quiz Status Management:</h2> 
+<h3>Quiz Status Management:</h3> 
 The application automatically determines the status of a quiz based on the current date and time. The createQuiz method in the QuizService class sets the status of the quiz as "inactive," "active," or "finished" depending on the start and end dates specified.  
-<h2>Quiz Retrieval:</h2>
+<h3>Quiz Retrieval:</h3>
 Users can retrieve quizzes based on their ID or get a list of all quizzes. The getQuizById and getAllQuizzes methods in the QuizController handle the retrieval of quizzes from the database.  
-<h2>Active Quiz Tracking:</h2>
+<h3>Active Quiz Tracking:</h3>
 The application keeps track of the active quiz by checking the current date and time against the start and end dates of the quizzes. The getActiveQuiz method in the QuizService class retrieves the active quiz from the database and updates its status accordingly.  
-<h2>Quiz Result Retrieval:</h2> 
+<h3>Quiz Result Retrieval:</h3> 
 The application allows users to retrieve the result of a finished quiz. The getQuizResult method in the QuizController returns the correct answer for a finished quiz based on the provided quiz ID.  
 <h2>Quiz Result Scheduling: </h2>
 The application schedules the retrieval of quiz results five minutes after the end date of each quiz. The scheduleQuizResultRetrieval method in the QuizService class uses a Timer and TimerTask to execute the retrieval task at the specified time.  
-<h2>Database Persistence: </h2>
+<h3>Database Persistence: </h3>
 The application utilizes Spring Data JPA and the QuizRepository interface to perform database operations such as saving quizzes, retrieving quizzes, and querying quizzes based on start and end dates.
-<h3> Project Structure </h3>
-The Quiz application follows a standard Spring Boot project structure:  com.Quiz.controller: Contains the controllers responsible for handling HTTP requests. <br>  •      #com.Quiz.dao: Contains the data access objects (DAOs) responsible for interacting with the database.<br> 
-•	**com.Quiz.entities:** Contains the entity classes that represent the data model of the application.<br>
-•	**com.Quiz.services:** Contains the service classes that implement the business logic of the application.<br>
-•	**com.Quiz.QuizApplication:** The main class of the application with the Spring Boot configuration. resources: Contains the application properties and Maven's POM (Project Object Model) file.<br>
+<h1> Project Structure </h1>
+The Quiz application follows a standard Spring Boot project structure:  com.Quiz.controller: Contains the controllers responsible for handling HTTP requests. <br>  •      com.Quiz.dao: Contains the data access objects (DAOs) responsible for interacting with the database.<br> 
+•	com.Quiz.entities: Contains the entity classes that represent the data model of the application.<br>
+•	com.Quiz.services: Contains the service classes that implement the business logic of the application.<br>
+•	com.Quiz.QuizApplication: The main class of the application with the Spring Boot configuration. resources: Contains the application properties and Maven's POM (Project Object Model) file.<br>
 <h1>Controllers</h1> 
 The Quiz application provides the following controllers:
-<h2>QuizController</h2> 
+<h3>QuizController</h3> 
 •	Endpoint: /quizzes/createQuiz<br>
 o	Method: POST<br>
 o	Description: Creates a new quiz. <br>
@@ -57,7 +55,7 @@ o	Description: Extends JpaRepository and provides methods for performing CRUD op
 o	Methods: findByStartDateBeforeAndEndDateAfter(startDate, endDate): Retrieves quizzes whose start date is before the specified date and end date is after the specified date.<br>
 <h1>Entities</h1> 
 The Quiz application defines the following entity:
-     <h2>Quiz</h2> 
+     <h3>Quiz</h3> 
 •	<h3>Attributes:</h3> <br>
 o	id: Unique identifier of the quiz. <br>
 o	question: The question of the quiz. <br>
@@ -68,7 +66,7 @@ o	endDate: The end date and time of the quiz. <br>
 o	status: The status of the quiz (active, inactive, finished).<br>
 <h1>Services </h1>
 The Quiz application provides the following services:  
-<h2>QuizService</h2> 
+<h3>QuizService</h3> 
 •	Description: Implements the business logic for quiz-related operations. <br>
 •	Methods: <br>
 o	createQuiz(quiz): Creates a new quiz, sets its status based on the current date and time, and saves it in the database. <br>
@@ -76,7 +74,7 @@ o	getActiveQuiz(): Retrieves the active quiz based on the current date and time,
 o	getQuizById(id): Retrieves a quiz by its ID from the database. <br>
 o	getAllQuizzes(): Retrieves all quizzes from the database. scheduleQuizResultRetrieval(quiz): Schedules a task to retrieve<br>
 <h1>Quiz Application Configuration</h1>
-   <h2> Database Configuration </h2><br>
+   <h3> Database Configuration </h3>
 The Quiz application uses a MySQL database for data storage. The database connection properties and other relevant configuration settings are
 specified in the application.properties file located in the resources directory.<br>
 
