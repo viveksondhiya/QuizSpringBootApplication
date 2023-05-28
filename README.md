@@ -56,7 +56,7 @@ o	Methods: findByStartDateBeforeAndEndDateAfter(startDate, endDate): Retrieves q
 <h1>Entities</h1> 
 The Quiz application defines the following entity:
      <h3>Quiz</h3> 
-•	<h3>Attributes:</h3> <br>
+	<h3>Attributes:</h3> <br>
 o	id: Unique identifier of the quiz. <br>
 o	question: The question of the quiz. <br>
 o	options: List of options for the quiz question.<br> 
@@ -80,10 +80,10 @@ specified in the application.properties file located in the resources directory.
 
 <h1>Spring Boot Application </h1>
 The main class of the Quiz application is QuizApplication, which is annotated with @SpringBootApplication. It also enables scheduling with the @EnableScheduling annotation.  
-•	<h3>Annotation:</h3> @SpringBootApplication <br> 
+	<h3>Annotation:</h3> @SpringBootApplication <br> 
 	Description: Indicates that this is a Spring Boot application. <br>
 	Location: com.Quiz.QuizApplication <br>
-•	<h3>Annotation:</h3> @EnableSchedu ling <br> 
+	<h3>Annotation:</h3> @EnableSchedu ling <br> 
 	Description: Enables scheduling support for the application. <br>
 	Location: com.Quiz.QuizApplication <br>
 <h1>Maven Configuration</h1> 
