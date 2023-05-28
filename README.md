@@ -21,7 +21,7 @@ The application schedules the retrieval of quiz results five minutes after the e
 <h2>Database Persistence: </h2>
 The application utilizes Spring Data JPA and the QuizRepository interface to perform database operations such as saving quizzes, retrieving quizzes, and querying quizzes based on start and end dates.
 <h3> Project Structure </h3>
-The Quiz application follows a standard Spring Boot project structure:  com.Quiz.controller: Contains the controllers responsible for handling HTTP requests.    • •      **com.Quiz.dao:** Contains the data access objects (DAOs) responsible for interacting with the database.<br> 
+The Quiz application follows a standard Spring Boot project structure:  com.Quiz.controller: Contains the controllers responsible for handling HTTP requests. <br>  •      #com.Quiz.dao: Contains the data access objects (DAOs) responsible for interacting with the database.<br> 
 •	**com.Quiz.entities:** Contains the entity classes that represent the data model of the application.<br>
 •	**com.Quiz.services:** Contains the service classes that implement the business logic of the application.<br>
 •	**com.Quiz.QuizApplication:** The main class of the application with the Spring Boot configuration. resources: Contains the application properties and Maven's POM (Project Object Model) file.<br>
@@ -33,57 +33,61 @@ o	Method: POST<br>
 o	Description: Creates a new quiz. <br>
 o	Request Body: Quiz object representing the quiz to be created. <br>
 o	Response: Returns the created quiz object.<br>
+
 •	Endpoint: /quizzes/active  <br>
 o	Method: GET <br>
 o	Description: Retrieves the active quiz. <br>
 o	Response: Returns the active quiz object if available. <br>
+
 •	Endpoint: /quizzes/{id}/result <br>
 o	Method: GET <br>
 o	Description: Retrieves the quiz result by ID. <br>
 o	Path Variable: id - ID of the quiz.<br> 
-o	Response: Returns the quiz result if the quiz has finished, or an appropriate response if the result is not available yet.<br>                          
+o	Response: Returns the quiz result if the quiz has finished, or an appropriate response if the result is not available yet.<br> 
+
 •	Endpoint: /quizzes/all  <br>
 o	Method: GET <br>
 o	Description: Retrieves all quizzes.<br> 
 o	Response: Returns a list of all quizzes.<br>
-<h3>Data Access Objects (DAOs)</h3>
+
+<h1>Data Access Objects (DAOs)</h1>
  The Quiz application provides the following data access objects:
    <h2>QuizRepository </h2>
-o	**Description:** Extends JpaRepository and provides methods for performing CRUD operations on the Quiz entity. 
-o	**Methods:** findByStartDateBeforeAndEndDateAfter(startDate, endDate): Retrieves quizzes whose start date is before the specified date and end date is after the specified date.
-<h3>Entities</h3> 
+o	**Description:** Extends JpaRepository and provides methods for performing CRUD operations on the Quiz entity. <br>
+o	**Methods:** findByStartDateBeforeAndEndDateAfter(startDate, endDate): Retrieves quizzes whose start date is before the specified date and end date is after the specified date.<br>
+<h1>Entities</h1> 
 The Quiz application defines the following entity:
      <h2>Quiz</h2> 
-•	<h1>Attributes:</h1> 
-o	id: Unique identifier of the quiz. 
-o	question: The question of the quiz. 
-o	options: List of options for the quiz question. 
-o	rightAnswer: The index of the correct answer in the options list. 
-o	StartDate: The start date and time of the quiz. 
-o	endDate: The end date and time of the quiz. 
-o	status: The status of the quiz (active, inactive, finished).
-<h3>Services </h3>
+•	<h3>Attributes:</h3> <br>
+o	id: Unique identifier of the quiz. <br>
+o	question: The question of the quiz. <br>
+o	options: List of options for the quiz question.<br> 
+o	rightAnswer: The index of the correct answer in the options list. <br>
+o	StartDate: The start date and time of the quiz. <br>
+o	endDate: The end date and time of the quiz. <br>
+o	status: The status of the quiz (active, inactive, finished).<br>
+<h1>Services </h1>
 The Quiz application provides the following services:  
 <h2>QuizService</h2> 
-•	**Description:** Implements the business logic for quiz-related operations. 
-•	**Methods:** 
-o	createQuiz(quiz): Creates a new quiz, sets its status based on the current date and time, and saves it in the database. 
-o	getActiveQuiz(): Retrieves the active quiz based on the current date and time, updates its status if necessary, and returns it. 
-o	getQuizById(id): Retrieves a quiz by its ID from the database. 
-o	getAllQuizzes(): Retrieves all quizzes from the database. scheduleQuizResultRetrieval(quiz): Schedules a task to retrieve
-<h3>Quiz Application Configuration</h3>
-   <h2> Database Configuration </h2>
+•	**Description:** Implements the business logic for quiz-related operations. <br>
+•	**Methods:** <br>
+o	createQuiz(quiz): Creates a new quiz, sets its status based on the current date and time, and saves it in the database. <br>
+o	getActiveQuiz(): Retrieves the active quiz based on the current date and time, updates its status if necessary, and returns it. <br>
+o	getQuizById(id): Retrieves a quiz by its ID from the database. <br>
+o	getAllQuizzes(): Retrieves all quizzes from the database. scheduleQuizResultRetrieval(quiz): Schedules a task to retrieve<br>
+<h1>Quiz Application Configuration</h1>
+   <h2> Database Configuration </h2><br>
 The Quiz application uses a MySQL database for data storage. The database connection properties and other relevant configuration settings are
-specified in the application.properties file located in the resources directory.
+specified in the application.properties file located in the resources directory.<br>
 
-<h3>Spring Boot Application </h3>
+<h1>Spring Boot Application </h1>
 The main class of the Quiz application is QuizApplication, which is annotated with @SpringBootApplication. It also enables scheduling with the @EnableScheduling annotation.  
-•	<h1>Annotation:</h1> @SpringBootApplication  
-	**Description:** Indicates that this is a Spring Boot application. 
-	**Location:** com.Quiz.QuizApplication
-•	<h1>Annotation:</h1> @EnableSchedu ling  
-	**Description:** Enables scheduling support for the application. 
-	**Location:** com.Quiz.QuizApplication 
+•	<h3>Annotation:</h3> @SpringBootApplication <br> 
+	**Description:** Indicates that this is a Spring Boot application. <br>
+	**Location:** com.Quiz.QuizApplication <br>
+•	<h3>Annotation:</h3> @EnableSchedu ling <br> 
+	**Description:** Enables scheduling support for the application. <br>
+	**Location:** com.Quiz.QuizApplication <br>
 <h3>Maven Configuration</h3> 
 The Quiz application uses Maven as the build and dependency management tool. The project's dependencies and plugins are defined in the pom.xml file.  
 <h2>Dependencies:</h2>  
