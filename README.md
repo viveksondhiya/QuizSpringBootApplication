@@ -73,7 +73,7 @@ o	getQuizById(id): Retrieves a quiz by its ID from the database.
 o	getAllQuizzes(): Retrieves all quizzes from the database. scheduleQuizResultRetrieval(quiz): Schedules a task to retrieve
 <h3>Quiz Application Configuration</h3>
    <h2> Database Configuration </h2>
-The Quiz application uses a MySQL database for data storage. The database                    connection properties and other relevant configuration settings are
+The Quiz application uses a MySQL database for data storage. The database connection properties and other relevant configuration settings are
 specified in the application.properties file located in the resources directory.
 
 <h3>Spring Boot Application </h3>
@@ -95,7 +95,7 @@ The Quiz application uses Maven as the build and dependency management tool. The
 <h2>Additional Notes</h2> 
 •	The project is built with Java version 17. 
 •	The project follows the standard Spring Boot project structure.
-Conclusion :
+<h2>Conclusion :</h2>
 the provided code represents a Quiz application built with Spring Boot. The application allows users to create quizzes, track the status of active quizzes, retrieve quiz results, and manage quizzes in the database. Key features include quiz creation, quiz status management, quiz retrieval by ID or all quizzes, active quiz tracking, quiz result retrieval, quiz result scheduling, and database persistence using Spring Data JPA. Additionally, the application integrates with Swagger to provide API documentation.
 Overall, the Quiz application demonstrates the use of Spring Boot, and Spring Data JPA. It can be further enhanced with additional functionality such as user authentication, scoring, and more advanced quiz management features based on specific requirements.
 
