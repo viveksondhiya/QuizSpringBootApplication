@@ -53,8 +53,8 @@ o	Response: Returns a list of all quizzes.<br>
 <h1>Data Access Objects (DAOs)</h1>
  The Quiz application provides the following data access objects:
    <h2>QuizRepository </h2>
-o	**Description:** Extends JpaRepository and provides methods for performing CRUD operations on the Quiz entity. <br>
-o	**Methods:** findByStartDateBeforeAndEndDateAfter(startDate, endDate): Retrieves quizzes whose start date is before the specified date and end date is after the specified date.<br>
+o	Description: Extends JpaRepository and provides methods for performing CRUD operations on the Quiz entity. <br>
+o	Methods: findByStartDateBeforeAndEndDateAfter(startDate, endDate): Retrieves quizzes whose start date is before the specified date and end date is after the specified date.<br>
 <h1>Entities</h1> 
 The Quiz application defines the following entity:
      <h2>Quiz</h2> 
@@ -69,8 +69,8 @@ o	status: The status of the quiz (active, inactive, finished).<br>
 <h1>Services </h1>
 The Quiz application provides the following services:  
 <h2>QuizService</h2> 
-•	**Description:** Implements the business logic for quiz-related operations. <br>
-•	**Methods:** <br>
+•	Description: Implements the business logic for quiz-related operations. <br>
+•	Methods: <br>
 o	createQuiz(quiz): Creates a new quiz, sets its status based on the current date and time, and saves it in the database. <br>
 o	getActiveQuiz(): Retrieves the active quiz based on the current date and time, updates its status if necessary, and returns it. <br>
 o	getQuizById(id): Retrieves a quiz by its ID from the database. <br>
@@ -83,23 +83,23 @@ specified in the application.properties file located in the resources directory.
 <h1>Spring Boot Application </h1>
 The main class of the Quiz application is QuizApplication, which is annotated with @SpringBootApplication. It also enables scheduling with the @EnableScheduling annotation.  
 •	<h3>Annotation:</h3> @SpringBootApplication <br> 
-	**Description:** Indicates that this is a Spring Boot application. <br>
-	**Location:** com.Quiz.QuizApplication <br>
+	Description: Indicates that this is a Spring Boot application. <br>
+	Location: com.Quiz.QuizApplication <br>
 •	<h3>Annotation:</h3> @EnableSchedu ling <br> 
-	**Description:** Enables scheduling support for the application. <br>
-	**Location:** com.Quiz.QuizApplication <br>
-<h3>Maven Configuration</h3> 
+	Description: Enables scheduling support for the application. <br>
+	Location: com.Quiz.QuizApplication <br>
+<h1>Maven Configuration</h1> 
 The Quiz application uses Maven as the build and dependency management tool. The project's dependencies and plugins are defined in the pom.xml file.  
 <h2>Dependencies:</h2>  
-•	Spring Boot starter dependencies for web, data JPA, test, and devtools. 
-•	MySQL Connector/J dependency for connecting to the MySQL database. 
-•	Springfox Swagger dependencies for API documentation. 
+•	Spring Boot starter dependencies for web, data JPA, test, and devtools.<br> 
+•	MySQL Connector/J dependency for connecting to the MySQL database. <br>
+•	Springfox Swagger dependencies for API documentation. <br>
 <h2>Plugins:</h2>  
-•	Spring Boot Maven Plugin for building and packaging the application.
+•	Spring Boot Maven Plugin for building and packaging the application.<br>
 <h2>Additional Notes</h2> 
-•	The project is built with Java version 17. 
-•	The project follows the standard Spring Boot project structure.
+•	The project is built with Java version 17. <br>
+•	The project follows the standard Spring Boot project structure.<br>
 <h2>Conclusion :</h2>
-the provided code represents a Quiz application built with Spring Boot. The application allows users to create quizzes, track the status of active quizzes, retrieve quiz results, and manage quizzes in the database. Key features include quiz creation, quiz status management, quiz retrieval by ID or all quizzes, active quiz tracking, quiz result retrieval, quiz result scheduling, and database persistence using Spring Data JPA. Additionally, the application integrates with Swagger to provide API documentation.
+the provided code represents a Quiz application built with Spring Boot. The application allows users to create quizzes, track the status of active quizzes, retrieve quiz results, and manage quizzes in the database. Key features include quiz creation, quiz status management, quiz retrieval by ID or all quizzes, active quiz tracking, quiz result retrieval, quiz result scheduling, and database persistence using Spring Data JPA. Additionally, the application integrates with Swagger to provide API documentation.<br>
 Overall, the Quiz application demonstrates the use of Spring Boot, and Spring Data JPA. It can be further enhanced with additional functionality such as user authentication, scoring, and more advanced quiz management features based on specific requirements.
 
